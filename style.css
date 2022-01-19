@@ -1,0 +1,117 @@
+html {
+    height: 100%;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    height: 100%;
+}   
+img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: #54436B;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: #50CB93;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    background-color: #54436B;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #50CB93;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-evenly;
+    margin: 15px 30px 15px 30px;
+    flex-grow: 1;
+    margin: 50px 50px 10px 50px;
+    height: fit-content;
+}
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+    flex-grow: 0;
+    height: fit-content;
+}
+button {
+    color: #444941;
+    background-color: #ACFFAD;
+    border-radius: 8%;
+    font-weight: 700;
+    padding: 8px 25px 8px 25px;
+    margin: 0;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #50CB93;
+    background-color: rgba(84, 67, 107, 0.678) ;
+    padding: 30px;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+.msg {
+    color: #382c47;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+.tally {    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    gap: 80px;
+}
+.subtally{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.player-score,
+.comp-score {
+    border-style: solid;
+    border-color: #50CB93;
+    background-color: #735e8a67;
+    min-width: 220px;
+    min-height: 180px;
+    border-radius: 10%;
+}
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 26px;
+    color: #4dbd8b;
+    background-color:rgba(68, 53, 88, 0.493);
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    border-radius: 50%;
+}
