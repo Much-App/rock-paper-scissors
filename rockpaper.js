@@ -1,21 +1,24 @@
+const hands = ["paper", "rock", "scissors"];
+let compScore = 0;
+let playerScore = 0;
+let compChoice ;
+
+const message = document.querySelector("#msg");
+const playerTally = document.querySelector("#playerTally");
+const compTally = document.querySelector("#compTally");
 
 
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
 
-const hands = ["paper", "rock", "scissors"]
-let compScore = 0
-let playerScore = 0
+rockBtn.onclick = () => round("rock");
+paperBtn.onclick = () => round("paper");
+scissorsBtn.onclick = () => round("scissors");
 
-
-let compChoice 
-let playerChoice
-/*
-function compPlay() {
-    compChoice = "paper"
-}
-*/
 
 function compPlay (){
-    let randomIndex = getRandomNumber ()
+    let randomIndex = getRandomNumber ();
     if (randomIndex == 0) {
         compChoice = hands[0]
     } else if (randomIndex == 1) {
@@ -24,57 +27,55 @@ function compPlay (){
         compChoice = hands[2]
     } else {
     }
-    return compChoice
+    return compChoice;
 }
+
 function getRandomNumber () {
-    let random = Math.floor(Math.random() * hands.length)
+    let random = Math.floor(Math.random() * hands.length);
     if (random == 3) {
-        random = getRandomNumber() }
+        random = getRandomNumber() };
     return random
 }
 
-/* player choice - cap insensitive */
-function playerPlay () {
-    let promptPlayer = prompt("Choose rock, paper or scissors?")
-    playerChoice = promptPlayer.toLowerCase()
-    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-        return playerChoice
-    } else { alert('Invalid choice. You must choose rock, paper or scissors.')
-        playerPlay()
+function round (str) {
+    let playerChoice = str;
+    compPlay();
+    if (compScore == 5 || playerScore == 5) {
+         return alert ('Refresh page to play again')    
     }
-     
-}
-
-/* A single round/match
-First, tie scenario
-Second, all player win scenarios
-Third, all player lose scenarios */
-
-function round () {
-    playerPlay()
-    compPlay()
     if (playerChoice == compChoice) {
-        console.log(`It's a tie! Player ${playerScore}-${compScore} Computer`)
-        alert (`It's a tie! Player ${playerScore}-${compScore} Computer`)
-        } 
+        message.textContent =`It's a tie! Player ${playerScore}-${compScore} Computer` }   
     else if ((playerChoice == "rock" && compChoice == "scissors") ||
             (playerChoice == "scissors" && compChoice == "paper") ||
             (playerChoice == "paper" && compChoice == "rock")) {
         playerScore++
-        alert (`You win! Player ${playerScore}-${compScore} Computer`)
-        return console.log (`You win! Player ${playerScore}-${compScore} Computer`)
+        playerTally.textContent += "I"
+        message.textContent = `You win! Player ${playerScore}-${compScore} Computer`
+         
         }
     else if ((playerChoice == "scissors" && compChoice == "rock") ||
             (playerChoice == "paper" && compChoice == "scissors") ||
             (playerChoice == "rock" && compChoice == "paper")) {
         compScore++
-        alert (`You lose! Player ${playerScore}-${compScore} Computer`)
-        return console.log (`You lose! Player ${playerScore}-${compScore} Computer`)
+        compTally.textContent += "I"
+        message.textContent = `You lose! Player ${playerScore}-${compScore} Computer` 
             }
+    scoreCheck()
+    return
+}
+
+function scoreCheck(){
+    if (compScore == 5) {
+        message.textContent ='Computer wins! Better luck next time';
+        compTally.classList.toggle('winner');
+    } else if (playerScore == 5) {
+        message.textContent ='You win! Great job!';
+        playerTally.classList.toggle('winner');
+    }
 }
 
 
-/* best of 5 game */
+/* best of 5 game 
 
     function bestof5 () {
         for (let i=0; (compScore < 3 && playerScore < 3); i++) {
@@ -87,3 +88,15 @@ function round () {
         }
         console.log('Thanks for playing!')
     }
+    */
+   /* player choice - cap insensitive 
+function playerPlay () {
+    let promptPlayer = prompt("Choose rock, paper or scissors?")
+    playerChoice = promptPlayer.toLowerCase()
+    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
+        return playerChoice
+    } else { alert('Invalid choice. You must choose rock, paper or scissors.')
+        playerPlay()
+    }
+}
+ */

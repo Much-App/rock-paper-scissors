@@ -84,6 +84,7 @@ button {
     color: #382c47;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
+    margin-bottom: 10px;
 }
 .tally {    
     display: flex;
@@ -105,6 +106,8 @@ button {
     min-width: 220px;
     min-height: 180px;
     border-radius: 10%;
+    font-size: 40px;
+    text-align: center;
 }
 h3 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -114,4 +117,11 @@ h3 {
     padding: 10px 20px 10px 20px;
     margin: 5px;
     border-radius: 50%;
+}
+
+.comp-score.winner,
+.player-score.winner{
+    color: goldenrod;
+    border-color:goldenrod;
+    background-color: rgb(235, 198, 107);
 }

@@ -13,25 +13,25 @@
     <div class="options">
         <div class="choices">
             <img src="rock.jpg">
-            <button>ROCK</button>   </div>
+            <button id="rock">ROCK</button>   </div>
         <div class="choices">
             <img src="paper.jpg">
-            <button>PAPER</button>   </div>
+            <button id="paper">PAPER</button>   </div>
         <div class="choices">
             <img src="scissors.jpg">
-            <button>SCISSORS</button>   </div>
+            <button id="scissors">SCISSORS</button>   </div>
     </div>
     
     <div class="score">
-        <div class="msg">Pick your choice </div>
+        <div id="msg" class="msg">Good Luck! </div>
         <div class="tally">
-            <div class="subtally">
+            <div class="subtally player">
                 <h3>Player</h3>
-                <div class="player-score"></div>
+                <div id="playerTally" class="player-score"></div>
             </div>
-            <div class="subtally">
+            <div class="subtally comp">
                 <h3>Computer</h3>
-                <div class="comp-score"></div>
+                <div id="compTally" class="comp-score"></div>
             </div>
         </div>
     </div>
@@ -39,6 +39,6 @@
     <div class="footer">Made by Much_App for The Odin Project</div>
 
 
-    <script type="javascript" src="rockpaper.js"></script>
+    <script src="rockpaper.js"></script>
 </body>
 </html>
